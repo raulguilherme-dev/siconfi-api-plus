@@ -18,7 +18,7 @@ Esta é uma API RESTful construída com [FastAPI](https://fastapi.tiangolo.com/)
 
 ### Pré-requisitos
 
-- [Python](https://www.python.org/downloads/) 3.7 ou superior
+- [Python](https://www.python.org/downloads/) 3.10 ou superior
 - [pip](https://pip.pypa.io/en/stable/)
 
 ### Passos para Instalação
