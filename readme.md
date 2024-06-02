@@ -13,8 +13,6 @@ Esta é uma API RESTful construída com [FastAPI](https://fastapi.tiangolo.com/)
 - [Instalação](#instalação)
 - [Uso](#uso)
 - [Endpoints](#endpoints)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
 
 ## Instalação
 
