@@ -18,19 +18,19 @@ Esta é uma API RESTful construída com [FastAPI](https://fastapi.tiangolo.com/)
 
 ### Pré-requisitos
 
-- [Python](https://www.python.org/downloads/) 3.10 ou superior
+- [Python 3.10 ou superior](https://www.python.org/downloads/) 
 - [pip](https://pip.pypa.io/en/stable/)
 
 ### Passos para Instalação
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/[nome-de-usuario]/[repositorio].git
+    git clone https://github.com/raulguilherme-dev/siconfi-api-plus.git
     ```
 
 2. Navegue até o diretório do projeto:
     ```sh
-    cd [pasta-raiz]
+    cd siconfi-api-plus
     ```
 
 3. Crie e ative um ambiente virtual:
@@ -91,9 +91,9 @@ uvicorn app.main:app --reload
 
 ### Iniciando o Servidor em Container
 
-    ```sh
+```sh
     docker run -d -p 8000:8000 fastapi-book-library
-    ```
+```
 
 #### O servidor será iniciado em `http://0.0.0.0:8000`.
 
@@ -200,3 +200,28 @@ Alguns parâmentros não podem ser usados juntos. E caso sejam utilizados essa m
 - `count` e `show_only`
 - `group_by` e `show_only`
 
+
+### Exemplos de consultas válidas
+
+```http
+http://127.0.0.1:8000/get_entes?filters={"regiao":"NE"}
+```
+
+```http
+http://127.0.0.1:8000/get_entes?filters={"esfera":"M","regiao":"NE","capital":"0  ","populacao":{"min":200000}}&group_by=uf
+```
+
+```http
+http://127.0.0.1:8000/get_entes?group_by=regiao&order={"order_by":"total"}
+```
+```http
+http://127.0.0.1:8000/get_entes?filters={"regiao":"NE","populacao":{"max":20000},"capital":"0  "}&group_by=uf
+```
+
+```http
+http://127.0.0.1:8000/get_entes?filters={"esfera":"M","capital":"1  "}&count=True
+```
+
+```http
+http://127.0.0.1:8000/get_entes?filters={"esfera":"M","capital":"1  "}&order={"order_by":"populacao","reverse":"True"}&show_only=ente|uf|populacao
+```
